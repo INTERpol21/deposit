@@ -1,0 +1,17 @@
+name: lombard
+
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: lombard-db
+    environment:
+      POSTGRES_USER: lombard
+      POSTGRES_PASSWORD: lombard
+      POSTGRES_DB: lombard
+    ports:
+      - "5433:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
